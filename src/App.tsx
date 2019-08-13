@@ -3,13 +3,11 @@ import './App.css';
 
 import { useRoutes, HookRouter, usePath } from 'hookrouter';
 import { StateClassComponent } from './state/StateClassComponent';
-import { StateFunctionalComponent } from './state/StateFunctionalComponent';
 import { LifeCycleWrapper } from './lifecycle/LifeCycleWrapper';
 
 import { Sidebar } from './components/Sidebar';
 import { Paper, makeStyles, Typography } from '@material-ui/core';
 import { LifeCycleClassComponent } from './lifecycle/LifeCycleClassComponent';
-import { LifeCycleFunctionalComponent } from './lifecycle/LifeCycleFunctionalComponentSolution';
 
 type SuperRoute = {
   name: string;
@@ -21,9 +19,9 @@ const defaultRoute = { name: 'Home', path: '*', render: () => <div>Open the side
 
 export const routes = [
   { name: 'State - Class Component', path: '/state/class', render: () => <StateClassComponent /> },
-  { name: 'State - Functional Component', path: '/state/fc', render: () => <StateFunctionalComponent /> },
   { name: 'Lifecycle - Class Component', path: '/lifecycle/class', render: () => <LifeCycleWrapper child={LifeCycleClassComponent} /> },
-  { name: 'Lifecycle - Functional Component', path: '/lifecycle/fc', render: () => <LifeCycleWrapper child={LifeCycleFunctionalComponent} /> },
+  // { name: 'State - Functional Component', path: '/state/fc', render: () => <StateFunctionalComponent /> },
+  // { name: 'Lifecycle - Functional Component', path: '/lifecycle/fc', render: () => <LifeCycleWrapper child={LifeCycleFunctionalComponent} /> },
 
   defaultRoute,
 ];
